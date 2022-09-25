@@ -1,5 +1,5 @@
 project(
-  'gnome-settings-daemon', 'c',
+  'gnome-settings-daemon', 'c', 'rust',
   version: '42.2',
   license: [ 'GPL2+', 'LGPLv2+' ],
   meson_version: '>= 0.49.0'
@@ -106,7 +106,7 @@ libgeoclue_dep = dependency('libgeoclue-2.0', version: '>= 2.3.1')
 libnotify_dep = dependency('libnotify', version: '>= 0.7.3')
 libpulse_mainloop_glib_dep = dependency('libpulse-mainloop-glib', version: '>= 2.0')
 pango_dep = dependency('pango', version: '>= 1.20.0')
-polkit_gobject_dep = dependency('polkit-gobject-1', version: '>= 0.114')
+polkit_gobject_dep = dependency('polkit-gobject-1', version: '>= 0.105')
 upower_glib_dep = dependency('upower-glib', version: '>= 0.99.12')
 x11_dep = dependency('x11')
 xfixes_dep = dependency('xfixes', version: '>= 6.0')
@@ -147,6 +147,12 @@ endif
 
 has_timerfd_create = cc.has_function('timerfd_create')
 config_h.set10('HAVE_TIMERFD', has_timerfd_create)
+
+enable_logitech = get_option('logitech')
+if enable_logitech
+  # Seems like Meson support for Rust is ill advertised
+endif
+config_h.set10('HAVE_LOGITECH', enable_logitech)
 
 # Check for wayland dependencies
 enable_wayland = get_option('wayland')
@@ -274,6 +280,7 @@ output += '        NetworkManager support:   ' + enable_network_manager.to_strin
 output += '        Smartcard support:        ' + enable_smartcard.to_string() + '\n'
 output += '        USB Protection support:   ' + enable_usb_protection.to_string() + '\n'
 output += '        Cups support:             ' + enable_cups.to_string() + '\n'
+output += '        Logitech support:         ' + enable_logitech.to_string() + '\n'
 output += '        Wayland support:          ' + enable_wayland.to_string() + '\n'
 output += '        Wacom support:            ' + enable_wacom.to_string() + '\n'
 output += '        RFKill support:           ' + enable_rfkill.to_string() + '\n'

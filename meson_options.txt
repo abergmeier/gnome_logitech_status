@@ -12,3 +12,4 @@ option('usb-protection', type: 'boolean', value: true, description: 'build with 
 option('wayland', type: 'boolean', value: true, description: 'build with Wayland support')
 option('wwan', type: 'boolean', value: true, description: 'build with WWAN support')
 option('colord', type: 'boolean', value: true, description: 'build with colord support')
+option('logitech', type: 'boolean', value: true, description: 'build with Logitech support')

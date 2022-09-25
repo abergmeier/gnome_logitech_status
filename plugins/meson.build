@@ -5,6 +5,7 @@ all_plugins = [
     ['power', 'Power', 'GNOME power management'],
     ['housekeeping', 'Housekeeping', 'GNOME maintenance of expirable data'],
     ['keyboard', 'Keyboard', 'GNOME keyboard configuration'],
+    ['logitech', 'Logitech', 'GNOME Logitech configuration'],
     ['media-keys', 'MediaKeys', 'GNOME keyboard shortcuts'],
     ['screensaver-proxy', 'ScreensaverProxy', 'GNOME FreeDesktop screensaver'],
     ['sharing', 'Sharing', 'GNOME file sharing'],
@@ -34,6 +35,10 @@ endif
 
 if not enable_cups
     disabled_plugins += ['cups']
+endif
+
+if not enable_logitech
+    disabled_plugins += ['logitech']
 endif
 
 if not enable_rfkill

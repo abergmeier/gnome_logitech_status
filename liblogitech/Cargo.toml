@@ -1,0 +1,19 @@
+[package]
+name = "gsd_logitech_plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "liblogitech"
+crate-type = ["staticlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.134"
+rusb = "0.9"
+gio = { git = "https://github.com/gtk-rs/gtk-rs-core.git", package = "gio" }
+gio-sys = { git = "https://github.com/gtk-rs/gtk-rs-core.git", package = "gio-sys" }
+glib = { git = "https://github.com/gtk-rs/gtk-rs-core.git", package = "glib" }
+glib-sys = { git = "https://github.com/gtk-rs/gtk-rs-core.git", package = "glib-sys" }
+gobject-sys = { git = "https://github.com/gtk-rs/gtk-rs-core.git", package = "gobject-sys" }

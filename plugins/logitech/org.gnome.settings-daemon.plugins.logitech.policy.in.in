@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+
+  <!--
+    Policy definitions for gnome-settings-daemon system-wide actions.
+  -->
+
+  <vendor>GNOME Settings Daemon</vendor>
+  <vendor_url>http://git.gnome.org/browse/gnome-settings-daemon</vendor_url>
+  <icon_name>output-logitech</icon_name>
+
+</policyconfig>
+

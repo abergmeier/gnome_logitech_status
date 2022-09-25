@@ -118,3 +118,6 @@ plugins/xsettings/test-gtk-modules
 plugins/xsettings/test-wm-button-layout-translations
 tests/shiftkey
 test-driver
+
+
+target/
